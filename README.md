@@ -1,50 +1,112 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# TODO App
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Descripción
 
-## Expanding the ESLint configuration
+Una **aplicación de lista de tareas (TODO)** construida con **React** y **TypeScript**, diseñada para gestionar tus tareas diarias de manera eficiente. Esta aplicación permite:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Crear un nuevo TODO.
+- Eliminar un TODO específico.
+- Eliminar todos los TODOs completados.
 
-- Configure the top-level `parserOptions` property like this:
+Este proyecto sigue las mejores prácticas de desarrollo web moderno con una arquitectura limpia y mantenible.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## Características
+
+- **Crear tareas**: Agrega nuevas tareas a la lista.
+- **Marcar tareas como completadas**: Cambia el estado de las tareas entre completado y pendiente.
+- **Eliminar tareas individuales**: Borra tareas específicas de la lista.
+- **Eliminar tareas completadas**: Limpia todas las tareas completadas con un solo clic.
+- **Interfaz intuitiva**: Experiencia de usuario sencilla y eficiente.
+
+---
+
+## Tecnologías Utilizadas
+
+- [React](https://reactjs.org/) - Biblioteca para construir interfaces de usuario.
+- [TypeScript](https://www.typescriptlang.org/) - Superset de JavaScript para añadir tipado estático.
+- [Vite](https://vitejs.dev/) - Herramienta para desarrollo rápido de aplicaciones React.
+- [CSS Modules](https://github.com/css-modules/css-modules) - Estilizado local y modular.
+
+---
+
+## Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalado:
+
+- [Node.js](https://nodejs.org/) (v16 o superior)
+- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/)
+
+---
+
+## Instalación
+
+Sigue estos pasos para configurar el proyecto localmente:
+
+1. Clona este repositorio:
+
+   ```bash
+   git clone https://github.com/tu-usuario/todo-app.git
+   cd todo-app
+   ```
+
+2. Instala las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+3. Inicia el servidor de desarrollo:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Abre tu navegador y ve a `http://localhost:5173`.
+
+---
+
+## Scripts Disponibles
+
+En el directorio del proyecto, puedes ejecutar:
+
+- **`npm run dev`**: Inicia el servidor de desarrollo.
+- **`npm run build`**: Genera una versión de producción.
+- **`npm run preview`**: Sirve la aplicación generada localmente.
+- **`npm run lint`**: Revisa el código para errores y problemas de estilo.
+
+
+---
+
+## Funcionalidades de la Aplicación
+
+### Crear un TODO
+1. Escribe la tarea en el campo de entrada.
+2. Haz clic en el botón **Agregar** para añadirla a la lista.
+
+### Completar/Desmarcar una Tarea
+1. Haz clic en la casilla de verificación junto a una tarea para marcarla como completada o pendiente.
+
+### Eliminar una Tarea
+1. Haz clic en el icono de papelera junto a la tarea que deseas eliminar.
+
+### Eliminar Todas las Completadas
+1. Haz clic en el botón **Eliminar Completadas** para limpiar todas las tareas marcadas como completadas.
+
+
+---
+
+## Licencia
+
+Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+## Autor
+
+Desarrollado por [Diego ALesxander](https://github.com/Alesxander1102). ¡Si te gusta este proyecto, dale una estrella ⭐ en GitHub!
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
